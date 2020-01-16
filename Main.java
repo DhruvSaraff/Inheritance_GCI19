@@ -133,13 +133,84 @@ class Square extends Rhombus {
     }
 
     // Calculate the length of each diagonal
-    public double diagonal() {
+    private double diagonal() {
         return a.dist(c);
+    }
+
+    // Return length of first diagonal
+    public double diagonal1() {
+        return diagonal();
+    }
+
+    // Return length of second diagonal
+    public double diagonal2() {
+        return diagonal();
     }
 
     // Calculate and return the area of the square
     // The function is an example of run-time polymorphism. All objects of this class type will invoke this function
     public double area() {
         return a.dist(b) * a.dist(b);
+    }
+}
+
+public class Main {
+
+    // Create the objects of the above functions and call their methods
+    public static void main(String args[]) throws Exception {
+
+        double x1, x2, x3, x4, y1, y2, y3, y4;
+
+        Scanner sc = new Scanner(System.in);
+
+        // Create a quadrilateral
+        System.out.println("Enter the coordinates of any quadrilateral");
+        x1 = sc.nextDouble();
+        y1 = sc.nextDouble();
+        x2 = sc.nextDouble();
+        y2 = sc.nextDouble();
+        x3 = sc.nextDouble();
+        y3 = sc.nextDouble();
+        x4 = sc.nextDouble();
+        y4 = sc.nextDouble();
+
+        Quadrilateral q = new Quadrilateral(x1, y1, x2, y2, x3, y3, x4, y4);
+        System.out.println("Diagonal 1 : " + q.diagonal1());
+        System.out.println("Diagonal 2 : " + q.diagonal2());
+        System.out.println("Perimeter : " + q.perimeter());
+
+        // Create a rhombus
+        System.out.println("Enter the coordinates of any rhombus");
+        x1 = sc.nextDouble();
+        y1 = sc.nextDouble();
+        x2 = sc.nextDouble();
+        y2 = sc.nextDouble();
+        x3 = sc.nextDouble();
+        y3 = sc.nextDouble();
+        x4 = sc.nextDouble();
+        y4 = sc.nextDouble();
+
+        Rhombus r = new Rhombus(x1, y1, x2, y2, x3, y3, x4, y4); // We must declare r as Rhombus otherwise static binding fails
+        System.out.println("Diagonal 1 : " + r.diagonal1());
+        System.out.println("Diagonal 2 : " + r.diagonal2());
+        System.out.println("Perimeter : " + r.perimeter());
+        System.out.println("Area : " + r.area());
+
+        // Create a square
+        System.out.println("Enter the coordinates of any square");
+        x1 = sc.nextDouble();
+        y1 = sc.nextDouble();
+        x2 = sc.nextDouble();
+        y2 = sc.nextDouble();
+        x3 = sc.nextDouble();
+        y3 = sc.nextDouble();
+        x4 = sc.nextDouble();
+        y4 = sc.nextDouble();
+
+        Rhombus s = new Square(x1, y1, x2, y2, x3, y3, x4, y4); // This time all functions will be called on Square during run-time
+        System.out.println("Diagonal 1 : " + s.diagonal1());
+        System.out.println("Diagonal 2 : " + s.diagonal2());
+        System.out.println("Perimeter : " + s.perimeter());
+        System.out.println("Area : " + s.area());
     }
 }
