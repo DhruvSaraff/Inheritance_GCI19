@@ -1,0 +1,18 @@
+ABSTRACTION
+Abstraction refers to the act of representing essential features without including background details or implementation information.
+We implement abstraction by using functions.
+Example: double x = Math.sqrt(5). All that we need to know is that the function returns the square root of the argument passed. We do not need to know how it is implemented or how it works.
+Abstraction allows the programmer to focus only on relevant information.
+
+ENCAPSULATION
+The wrapping up of data and functions into a single unit is called encapsulation.
+Encapsulation is a way to implement abstraction.
+
+INHERITANCE
+The ability by which one class acquires the property of another class is called inheritance.
+The main advantage of inheritance is code reusability.
+
+POLYMORPHISM
+The ability of a data to be processed in more than one form is called polymorphism.
+Compile time polymorphism can be implemented in Java using method overloading. This reduces the execution time of the program by reducing the number of matches the compiler needs to make. It also makes code easier to read and understand.
+Run time polymorphism can be implemented by method overriding. This allows for reusability of functions in inheritance and build on top of them. 
